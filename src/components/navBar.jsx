@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import auth from '../services/authService';
 import { Link, NavLink } from 'react-router-dom';
 
 class NavBar extends Component {
@@ -15,7 +16,7 @@ class NavBar extends Component {
     });
   }
   render() {
-    const user = this.state.user;
+    const user = auth.getCurrentUser();
     const collapsed = this.state.collapsed;
     const classOne = collapsed
       ? 'collapse navbar-collapse'
